@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Station</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="" id="">
+            <div class="" id="">
+                <button class="mobile-menu-toggle" id="">
+                    <i class="fa-solid fa-bars"></i>                
+                </button> 
+            </div>
+            <nav class="mobile-nav">
+                <a href="#"><i class="fa-solid fa-house"></i> Accueil </a>
+                <a href="#"><i class="fa-solid fa-phone"></i> Contact </a>
+                <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda </a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Lieu </a>
+            </nav>
+        </div>
+        <div class="over" id="">
+            <p class="">Over One Hundred Flavers Of</p>
+        </div>
+        <div class="title" id="">
+            <h1>SPECIALLY <br>CRAFTED TEA!</h1>
+        </div>
+        <div class="explore" id="">
+            <a href="#" target="_blank" id="">Explore</a>
+        </div>
+    </header>
+    <div class="hr">
+        <hr>
+    </div>
+
+    <main>
+        <section>
+            <div class="">
+                <p>Bonjour</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+    
+            menuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('open');
+            });
+    
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                    if (mobileNav.classList.contains('open')) {
+                        mobileNav.classList.remove('open');
+                    }
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

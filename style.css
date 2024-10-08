@@ -1,0 +1,108 @@
+
+body {
+    background-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url("./assets/image/main-bcg.jpeg");
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+.hr hr{
+    padding: 3px;
+    border: 1px solid black;
+    background-color: rgb(4, 221, 4);
+}
+
+.over p {
+    color: green;
+    font-family: "Grand Hotel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.explore {
+    display: flex;
+    justify-content: center;
+}
+
+.explore a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: green;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+/* Style pour le bouton menu mobile */
+.mobile-menu-toggle {
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 45px;
+    cursor: pointer;
+    color: green;
+}
+
+.mobile-menu-toggle:hover {
+    color: rgba(14, 220, 14, 0.669);
+}
+
+/* Style pour le menu mobile */
+.mobile-nav {
+    display: none; /* Masquer le menu mobile par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; 
+    left: 30px;
+    background-color: black;
+    width: 45%;
+    z-index: 1000;
+}
+
+.mobile-nav a {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1500px) {
+    /* Masquer le menu desktop */
+    header nav {
+        display: none;
+    }
+
+    /* Affiche le bouton menu mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Affiche le menu mobile lorsqu'il est ouvert */
+    .mobile-nav.open {
+        display: flex;
+    }
+}
