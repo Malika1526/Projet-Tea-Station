@@ -24,9 +24,10 @@ header {
 }
 
  hr{
-    padding: 3px;
+    padding: 5px;
     border: 1px solid black;
-    background-color: rgb(4, 221, 4);
+    background: radial-gradient(circle, #e7b849, #6b8f3e);
+
 }
 
 .over p {
@@ -109,27 +110,64 @@ header {
     color: white;
 }
 
-.second {
+.principal{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
+    text-align: center;
+    font-family: catamaran, serif;
+    background-color: #f1f5f8;
+    height: 350px;
 }
 
-.icon1 a{
-    padding: 20px;
-    font-size: 100px ;
+.principal h1{
+    font-size: 25px;
+    position: relative;
+    top: 80px;
 }
 
-.icon2 a{
-    padding: 20px;
-    font-size: 100px ;
+.principal p{
+    display: inline-block;
+    font-size: 25px;
+    color: #4e82ae;
+    position: relative;
+    top: 90px;
+
 }
 
-.icon3 a{
-    padding: 20px;
-    font-size: 100px ;
+
+.principal i{
+    margin-top: 35px;
+    position: relative;
+    top: 35px;
 }
+
+.mug-hot i{
+    content: '\f7b6';
+    color: #678e3e;
+    font-size: 60px;
+}
+
+.mug-hot h1{
+    letter-spacing: 5px;
+}
+
+.champagne-glasses i{
+    content: '\f7b6';
+    color: #678e3e;
+    font-size: 60px;
+}
+
+.bomb i{
+    content: '\f1e2';
+    color: #678e3e;
+    font-size: 60px;
+}
+
+.recipe i{
+    content: '\f79f';
+    color: #678e3e;
+    font-size: 60px;
+}
+
 
 /* Media Queries */
 @media (max-width: 1500px) {
