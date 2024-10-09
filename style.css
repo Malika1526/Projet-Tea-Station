@@ -11,33 +11,47 @@ body {
 header {
     background-image: url("./assets/image/main-bcg.jpeg");
     width: 100%;
-    height: 400px;
-    background-repeat: no-repeat;
+    height: 675px;
     background-size:cover;
+    background-repeat: no-repeat;
+    
+    /* positioner l'image */
+    background-position: 0px -180px;
+    
+    /* obtenir un ombrage */
+    filter: brightness(0.5);
 
 }
 
-.hr hr{
+ hr{
     padding: 3px;
     border: 1px solid black;
     background-color: rgb(4, 221, 4);
 }
 
 .over p {
-    color: green;
+    color: #678e3e;
     font-family: "Grand Hotel", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 50px;
+    font-weight: 690;
+    letter-spacing: 6px;
+    font-size: 47px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: -15px;
+    filter: brightness(2.5);
 }
 
-.title h1 {
-    font-size: 36px;
+.title{
+    padding: 10px;
+}
+
+.title p {
+    font-size: 78px;
+    font-family: catamaran, serif;
     color: white;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: -57px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .explore {
@@ -49,25 +63,31 @@ header {
     text-align: center;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: green;
-    font-size: 18px;
-    margin-right: 20px;
+    padding: 25px 40px;
+    background-color: #678e3e;
+    outline: 3px solid #678e3e;
+    outline-offset: 5px ;
+    font-size: 15px;
+    margin-right: 25px;
+    margin-top: 65px;
+}
+
+.explore a p{
+    font-size: 20px;
 }
 
 /* Style pour le bouton menu mobile */
 .mobile-menu-toggle {
-    padding: 20px;
+    padding: 25px 0px 0px 80px;
     background: none;
     border: none;
-    font-size: 45px;
+    font-size: 55px;
     cursor: pointer;
-    color: green;
+    color: #678e3e;
 }
 
 .mobile-menu-toggle:hover {
-    color: rgba(14, 220, 14, 0.669);
+    color: #577b2f;
 }
 
 /* Style pour le menu mobile */
@@ -78,7 +98,7 @@ header {
     top: 70px; 
     left: 30px;
     background-color: black;
-    width: 45%;
+    width: 25%;
     z-index: 1000;
 }
 
@@ -87,6 +107,28 @@ header {
     border-bottom: 1px solid #ddd;
     text-decoration: none;
     color: white;
+}
+
+.second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.icon1 a{
+    padding: 20px;
+    font-size: 100px ;
+}
+
+.icon2 a{
+    padding: 20px;
+    font-size: 100px ;
+}
+
+.icon3 a{
+    padding: 20px;
+    font-size: 100px ;
 }
 
 /* Media Queries */
