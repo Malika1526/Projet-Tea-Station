@@ -110,6 +110,24 @@ header {
     color: white;
 }
 
+/* Media Queries */
+@media (max-width: 2000px) {
+    /* Masquer le menu desktop */
+    header nav {
+        display: none;
+    }
+
+    /* Affiche le bouton menu mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Affiche le menu mobile lorsqu'il est ouvert */
+    .mobile-nav.open {
+        display: flex;
+    }
+}
+
 .principal{
     display: flex;
     text-align: center;
@@ -132,7 +150,6 @@ header {
     top: 90px;
 
 }
-
 
 .principal i{
     margin-top: 35px;
@@ -169,26 +186,94 @@ header {
 }
 
 
-/* Media Queries */
-@media (max-width: 1500px) {
-    /* Masquer le menu desktop */
-    header nav {
-        display: none;
-    }
+/*  Section About Our-Tea Station */
+.second {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
 
-    /* Affiche le bouton menu mobile */
-    .mobile-menu-toggle {
-        display: block;
-    }
+.img-second img {
+    width: 750px;
+    height: 530px;
+    border: 15px solid #577b2f;
+    object-fit: cover;
 
-    /* Affiche le menu mobile lorsqu'il est ouvert */
-    .mobile-nav.open {
-        display: flex;
-    }
+}
+
+.img-second img {
+    transition: transform 0.5s;
+}
+
+.img-second:hover img {
+    transform: scale(1.05);
+  }
+
+
+.second h2 {
+    font-size: 75px;
+    font-family: "Grand Hotel", cursive;
+    color:#577b2f;
+    letter-spacing: 12px;
+    
+}
+
+.placement-text {
+    display: block;
+    margin-left: 60px;
+
+}
+
+.b {
+    font-family: catamaran, serif;
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: -20px;
+    letter-spacing: 3px;
+
+}
+
+.c {
+    font-size: 26px;
+    font-family: catamaran, serif;
+    color: #92a9be;
+}
+
+.second-button button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+    background-color: #678e3e;
+    color: white;
+    border: 3px solid #577b2f;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: catamaran, serif;
+    letter-spacing: 4px;
+    border-radius: 10px;
+
+    transition: all 1s linear;
+
+}
+
+.second-button button:hover {
+    background-color: #577b2f;
+    cursor: pointer;
+
+    transform: rotateY(360deg);
+    transition-property: color, border ;
+    border: 3px solid #678e3e;
+
+}
+
+.para2 {
+    margin-top: 20px;
 }
 
 
-
+/*  Section Explore-Our Services */
 .title-projects p {
     color: #678e3e;
     font-family: "Grand Hotel", cursive;
@@ -293,3 +378,162 @@ header {
     font-size: 25px;
 }
 
+
+/*  Tous le code CSS en bas, représente le footer et la section Contact */
+
+/* Section contact */
+.section_contact {
+    background-color: #f1f5f8;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-top: 50px;
+    
+}
+
+.contact_info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.contact_info p {
+    letter-spacing: 3px;
+    font-family: catamaran, serif;
+}
+
+.contact_info address {
+    margin: 15px;;
+}
+
+.contact_info i {
+    font-size: 20px;
+    color: #678e3e;
+}
+
+.contact_info a {
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #577b2f;
+}
+
+.contact_info a:hover {
+    color: #518b12;
+}
+
+.email {
+    margin-top: 15px;
+}
+
+.tel {
+    margin-top: 15px;
+}
+
+
+.contact_form {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 30vw;
+    padding: 40px;
+}
+
+.contact_form input {
+    width: 90%;
+}
+
+.contact_form h3{
+    color: #6a7f9a;
+    text-align: center;
+    font-family: catamaran, serif;
+    font-size: 25px;
+    margin-top: -30px;
+    letter-spacing: 3px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #f1f5f8;
+    border-radius: 5px;
+    margin: 10px;
+    height: 30px;
+    border-style: none;
+}
+
+
+.btn-form button {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    padding: 0.5rem 1rem;
+    background-color: #678e3e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+   
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer nav ul li {
+    margin: 0 0.5rem;
+}
+
+footer img {
+    width: 24px; 
+    height: 24px;
+}
+
+footer p {
+    text-align: center;
+    letter-spacing: 3px;
+}
+footer span{
+    color: #678e3e;
+}
+
+.reseaux i {
+    font-size: 22px;
+    color: white;
+}
+
+
+/* Le code CSS qui se situe ci-dessous concerne le côté responsive du site 
+qui s'ajuste en fonction de la taille de l'écran */
+
+/* Ecran mobile */
+@media  and (max-width: 600px) {
+    
+}
+
+/* Ecran Tablette*/
+@media  and (min-width: 601px) and (max-width: 1299px) {
+    
+}
+
+/* Ecran Ordinateur */
+@media  and (min-width: 1300px) {
+
+}

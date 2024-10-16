@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tea Station</title>
+    <!--  
+            <link href="./dist/output.css" rel="stylesheet">
+    -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,8 +20,8 @@
 
     <header>
         <div class="" id="">
-            <div class="" id="">
-                <button class="mobile-menu-toggle" id="">
+            <div class="accueil" id="accueil">
+                <button class="mobile-menu-toggle">
                     <i class="fa-solid fa-bars"></i>                
                 </button> 
             </div>
@@ -27,7 +29,7 @@
                 <a href="#"><i class="fa-solid fa-house"></i> Accueil </a>
                 <a href="#"><i class="fa-solid fa-phone"></i> Contact </a>
                 <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda </a>
-                <a href="#"><i class="fa-solid fa-location-dot"></i> Lieu </a>
+                <a href="#"><i class="fa-solid fa-location-dot"></i>Lieu </a>
             </nav>
         </div>
         <div class="over" id="">
@@ -45,9 +47,6 @@
         <hr>
 
     <main>
-
-        <br>
-
         <section>
                 <div class="principal">
                     <div class="mug-hot">
@@ -77,67 +76,25 @@
                 </div>
         </section>
 
-        <br>
 
-    </main>
-
-    <section id="projects">
-        <div class="title-projects">
-            <p class="">Explore</p>
-            <a href="#">Our Services</a>
-        </div>
-        <div class="projects-container">
-                <div class="project-card">
-                    <img src="./assets/image/product-1.jpeg" class="" alt="Image">
-                    <a href="#" target="_blank"><h3>Custom Recipes</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                    <p>adipisicing elit. Consequuntur, quia.</p>
-                    <p class="rond"><i class="fa-solid fa-mortar-pestle"></i></p>
-                    <a href="#" class="btn" target="_blank">Read More</a>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/image/product-2.jpeg" class="" alt="Image">
-                    <a href="#" target="_blank"><h3>Home Delivery</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                    <p>adipisicing elit. Consequuntur, quia.</p>                    
-                    <p class="rond"><i class="fa-solid fa-house-chimney"></i></p>
-                    <a href="#" class="btn" target="_blank">Read More</a>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/image/product-3.jpeg" class="" alt="Image">
-                    <a href="#" target="_blank"><h3>Tea Aging</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
-                    <p>adipisicing elit. Consequuntur, quia.</p>      
-                    <p class="rond"><i class="fa-solid fa-mug-hot"></i></p>
-                    <a href="#" class="btn" target="_blank">Read More</a>
-                </div>
-        </div>
-    </section>
-
-    <footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                const mobileNav = document.querySelector('.mobile-nav');
         
-    </footer>
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            const mobileNav = document.querySelector('.mobile-nav');
-    
-            menuToggle.addEventListener('click', function() {
-                mobileNav.classList.toggle('open');
-            });
-    
-            document.addEventListener('click', function(event) {
-                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-                    if (mobileNav.classList.contains('open')) {
-                        mobileNav.classList.remove('open');
+                menuToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('open');
+                });
+        
+                document.addEventListener('click', function(event) {
+                    if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                        if (mobileNav.classList.contains('open')) {
+                            mobileNav.classList.remove('open');
+                        }
                     }
-                }
+                });
             });
-        });
-    </script>
+        </script>
     
 </body>
 </html>
