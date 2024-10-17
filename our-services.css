@@ -1,0 +1,154 @@
+body {
+    background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*  Section Explore-Our Services */
+.title-projects p {
+    color: #678e3e;
+    font-family: "Grand Hotel", cursive;
+    letter-spacing: 6px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.title-projects a {
+    font-size: 30px;
+    font-family: catamaran, serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #102a42;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+#projects {
+    padding: 50px ;
+    margin-top: 50px;
+}
+
+#projects h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 20px;
+    width: 100%;
+}
+
+.project-card {
+    width: 380px;
+    margin: 15px;
+    background-color: #f1f5f8;
+    border-radius: 10px;
+     
+    box-shadow: 8px 8px 5px rgba(225,225,225,255);   
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+.project-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block; /* Supprime tout espace blanc en dessous de l'image */
+    margin: 0 auto; /* Centre horizontalement */
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #3a4c5e;
+}
+
+.project-card p {
+    padding: 0 10px;
+    margin-bottom: 20px;
+    font-family: catamaran, serif;
+    letter-spacing: 2px;
+    color: #a5b6c6;
+    font-size: 13px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-weight: 600;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-card .btn {
+    padding: 6px 12px;
+    background: #678e3e;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.project-card .btn:hover {
+    background: #518b12;
+}
+
+.projects-container i {
+    color: #678e3e;
+    font-size: 25px;
+}
+
+.mostar-pestle, .house-chimey, .mug-hot {
+    background-color: #beed8c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    padding: 1px;
+    position: relative;
+    left : 41%;
+    bottom: 200px;
+    border: 5px solid #f1f5f8;
+}
+
+
+
+.title-name h3 {
+    margin-top: 40px;
+    font-family: catamaran, serif;
+    letter-spacing: 3px;
+}
+
+.link {
+    margin-top: -50px;
+    margin-bottom: 25px;
+}
+
+.link a {
+    width: 64px;
+    height: 12px;
+    font-family: catamaran, serif;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-radius: 5px;
+
+}
