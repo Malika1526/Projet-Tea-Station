@@ -25,13 +25,8 @@ gsap.to(".shadow" , {
 }) 
 
 
-// Vérifier si le paramètre "redirected" est dans l'URL
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('redirected')) {
-    window.location.href = './page-accueil/pageaccueil-teastation.html'; // Rediriger immédiatement
-} else {
-    // Sinon, exécuter le loader et définir le timeout
-    setTimeout(function() {
-        window.location.href = './page-accueil/pageaccueil-teastation.html?redirected=true'; // Ajouter un paramètre à l'URL
-    }, 3000); // Temps d'attente de 3 secondes
-}
+// Simulation d'un faux temps de chargement de 3 secondes
+setTimeout(function() {
+    
+    window.location.href = "./page-accueil/pageaccueil-teastation.html";
+}, 3000); 
