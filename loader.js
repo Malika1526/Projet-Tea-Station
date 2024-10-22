@@ -29,4 +29,6 @@ gsap.to(".shadow" , {
 setTimeout(function() {
     
     window.location.href = "./page-accueil/pageaccueil-teastation.html";
+    history.replaceState(null, null, 'pageaccueil-teastation.html'); // Remplacer l'historique pour éviter le retour sur le loader
+
 }, 3000); 
