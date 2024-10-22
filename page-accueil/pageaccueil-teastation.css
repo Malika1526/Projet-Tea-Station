@@ -1,0 +1,948 @@
+
+body {
+    background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    /* Permet de contrôler la manière dont le défilement se produit 
+    (instantané ou fluide) lors de l’utilisation de liens d'ancrage*/
+    scroll-behavior: smooth;
+}
+
+header {
+    background-image: url("../assets/image/main-bcg.jpeg");
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    /* positioner l'image */
+    background-position: 0px 0px;
+     /* Empêche l'image de bouger lors du défilement */
+     background-attachment: fixed;
+}
+
+/* Créer une couche de fond sombre uniquement pour l'image de fond */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 6, 6, 0.647); /* Un overlay sombre avec transparence */
+    z-index: 1; /* S'assure que cette couche est sous le contenu du header */
+}
+
+/* S'assure que le contenu du header reste au-dessus de l'overlay */
+header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.menu-mobile {
+    position: relative;
+    z-index: 1005;
+}
+
+ hr{
+    padding: 5px;
+    border: 1px solid black;
+    background: radial-gradient(circle, #e7b849, #6b8f3e);
+}
+
+.over p {
+    color: #678e3e;
+    font-family: "Grand Hotel", cursive;
+    font-weight: 690;
+    letter-spacing: 6px;
+    font-size: 47px;
+    text-align: center;
+    margin-bottom: -15px;
+    padding-top: 70px;
+}
+
+/* Animation de la classe over et de la balise P, le text demarre de la gauche et vient se placer au centre */
+.over p{
+    animation: move 8s;
+}
+@keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0.2%); }
+}
+
+.icon-linkedin i {
+    color: #1766C2;
+    font-size: 20px;
+    margin-right: 10px;
+    padding-top: 5px;
+}
+
+.icon-linkedin  {
+    color: #1766C2;
+}
+
+.icon-linkedin i:hover {
+    color: #1766C2;
+}
+
+.title h1 {
+    font-size: 60px;
+    font-family: catamaran, serif;
+    color: white;
+    text-align: center;
+    margin-bottom: -57px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1em;
+    margin-top: 30px;
+}
+
+/* Animation de la classe title et de la balise h1, le text demarre de la droite et vient se placer au centre */
+.title h1 {
+    animation: move-title 8s;
+}
+@keyframes move-title {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-0.2%); }
+}
+
+.explore {
+    display: flex;
+    justify-content: center;
+}
+
+.explore a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 25px 40px;
+    background-color: #678e3e;
+    outline: 3px solid #678e3e;
+    outline-offset: 5px ;
+    font-size: 15px;
+    margin-right: 25px;
+    margin-top: 8em;
+}
+
+.explore a:hover {
+    background-color: #beec8e;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore a p{
+    font-size: 20px;
+}
+
+
+.accueil-menu {
+    position: fixed; /* Fixe la position du menu pour qu'il suive le scrolling */
+    top: 10px; 
+    left: 50px; 
+    z-index: 1001; /* Assure que le bouton reste au-dessus des autres éléments */
+}
+
+/* Style pour le bouton de fermeture */
+.close-nav {
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+    position: relative;
+    left: 260px; /* Aligne le bouton à droite dans le menu */
+}
+
+.close-nav:hover {
+    color: rgb(206, 110, 110);
+}
+
+/* Media Queries pour le menu, cela prend en compte sur toutes les différentes tailles d'écran */
+@media (max-width: 2000px) {
+    /* Masquer le menu desktop */
+    header nav {
+        display: none;
+    }
+
+    /* Affiche le bouton menu mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Affiche le menu mobile lorsqu'il est ouvert */
+    .mobile-nav.open {
+        display: flex;
+    }
+}
+
+
+/* Style pour le bouton menu mobile */
+.mobile-menu-toggle {
+    padding: 25px 0px 0px 80px;
+    background: none;
+    border: none;
+    font-size: 55px;
+    cursor: pointer;
+    color: #678e3e;
+    display: block; /* Assure que l'icône du menu est visible par défaut */
+}
+
+.mobile-menu-toggle.hidden {
+    display: none; /* Masque l'icône lorsque le menu est ouvert */
+}
+
+.mobile-menu-toggle:hover {
+    color: #577b2f;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+/* Style pour le menu mobile avec positionnement */
+.mobile-nav {
+    position: fixed; /* Le menu est fixe pour toujours être visible */
+    top: 0;
+    left: -100%; /* Menu hors de l'écran à gauche */
+    width: 300px; 
+    height: 100%; 
+    border-right: 3px solid black;
+    background-color: #f1f5f8;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.8s ease; /* Transition douce pour le déplacement */
+}
+
+/* Quand le menu est ouvert, il apparaît à gauche */
+.mobile-nav.open {
+    left: 0; /* Le menu glisse depuis la gauche */
+}
+
+.mobile-nav a {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+}
+
+.mobile-nav a:hover {
+    color: #577b2f;
+}
+
+
+/* Section Header avec les différentes icones */
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: catamaran, serif;
+    background-color: #f1f5f8;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.icon-skills i {
+    color: #678e3e;
+    font-size: 40px;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.title-skills h1 {
+    font-size: 20px;
+    font-family: catamaran, serif;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.para-skills p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #a5b6c6;
+    text-align: center;
+}
+
+.mug-hot:hover, .champagne-glasses:hover, .bomb:hover, .recipe:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    border-bottom: 2px solid #678e3e;
+    background-color: white;
+}
+
+.icon-skills i:hover {
+    position: relative;
+    top: -5px;
+}
+
+
+/*  Section About Our-Tea Station */
+
+.second {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+}
+
+
+.img-second {
+    border: 10px solid #577b2f;
+    width: 670px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .img-second img {
+    width: 670px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s;
+    display: block;
+  }
+  
+  .img-second:hover img {
+    transform: scale(1.05);
+  }
+  
+  .img-second::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 255, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .img-second:hover::after {
+    opacity: 1;
+  }
+
+.second h2 {
+    font-size: 55px;
+    font-family: "Grand Hotel", cursive;
+    color:#577b2f;
+    letter-spacing: 12px;
+}
+
+.placement-text {
+    display: block;
+    margin-left: 60px;
+}
+
+.b {
+    font-family: catamaran, serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: -20px;
+    letter-spacing: 3px;
+}
+
+.c {
+    font-size: 18px;
+    font-family: catamaran, serif;
+    color: #92a9be;
+}
+
+.second-button button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+    background-color: #678e3e;
+    color: white;
+    border: 3px solid #577b2f;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: catamaran, serif;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    transition: all 1s linear;
+}
+
+.second-button button:hover {
+    background-color: #beec8e;
+    cursor: pointer;
+    transform: rotateY(360deg);
+    transition-property: color, border ;
+    border: 3px solid #678e3e;
+}
+
+.para2 {
+    margin-top: 20px;
+}
+
+
+/* Section Checkout - Our Products */
+
+.product_section {
+    background-color: #f1f5f8;
+    width: 100%;
+}
+  
+.product_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 60px;
+    padding-top: 100px;
+    gap: 50px;
+}
+
+  .product_container h4 {
+    font-family: catamaran, serif;
+    letter-spacing: 3px;
+  }
+
+  .product_content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title-checkout h2{
+    color: #678e3e;
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-family: "Grand Hotel", cursive;
+    width: 200px;
+  }
+
+  .product-checkout a {
+    font-size: 50px;
+    color: #17324b;
+    margin-bottom: 20px; 
+    font-family: catamaran, serif;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+
+  .para-checkout p {
+    font-family: catamaran, serif;
+    font-size: 16px;
+    width: 200px;
+    color: #8591af;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+  
+  .btn_content {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #678e3e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+  }
+
+  .btn_content:active {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .btn_content:hover {
+    background-color: #beec8e;
+  }
+
+  .btn-checkout a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .product_gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+  .product_gallery p {
+    font-family: catamaran, serif;
+    font-size: 13px; 
+    letter-spacing: 3px;
+  }
+  
+  .product_card {
+    flex: 1 1 30%; /* Chaque carte occupe environ 30% de l'espace disponible */
+    margin: 15px;
+    text-align: center;
+}
+  
+  .product_card img {
+    width: 270px;
+    height: 300px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-position: center;
+    object-fit: cover;
+  }
+  
+  .product_card h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .product_card .price {
+    font-size: 16px;
+    color: #678e3e;
+    font-weight: bold;
+  }
+
+
+
+/*  Section Explore-Our Services */
+
+.title-projects p {
+    color: #678e3e;
+    font-family: "Grand Hotel", cursive;
+    letter-spacing: 6px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.title-projects a {
+    font-size: 30px;
+    font-family: catamaran, serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #102a42;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+#projects {
+    padding: 50px ;
+    margin-top: 50px;
+}
+
+#projects h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 20px;
+    width: 100%;
+}
+
+.project-card {
+    width: 380px;
+    margin: 15px;
+    background-color: #f1f5f8;
+    border-radius: 10px;
+    box-shadow: 8px 8px 5px rgba(225,225,225,255);   
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+.project-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block; /* Supprime tout espace blanc en dessous de l'image */
+    margin: 0 auto; /* Centre horizontalement */
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #3a4c5e;
+}
+
+.project-card p {
+    padding: 0 10px;
+    margin-bottom: 20px;
+    font-family: catamaran, serif;
+    letter-spacing: 2px;
+    color: #a5b6c6;
+    font-size: 13px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-weight: 600;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-card .btn {
+    padding: 6px 12px;
+    background: #678e3e;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.project-card .btn:hover {
+    background: #beec8e;
+}
+
+.projects-container i {
+    color: #678e3e;
+    font-size: 25px;
+}
+
+.mostar-pestle-projects, .house-chimey-projects, .mug-hot-projects {
+    background-color: #beed8c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 55px;
+    padding: 1px;
+    position: relative;
+    left : 41%;
+    bottom: 195px;
+    border: 5px solid #f1f5f8;
+}
+
+.title-name h3 {
+    margin-top: 40px;
+    font-family: catamaran, serif;
+    letter-spacing: 3px;
+}
+
+.link {
+    margin-top: -50px;
+    margin-bottom: 25px;
+}
+
+.link a {
+    width: 64px;
+    height: 12px;
+    font-family: catamaran, serif;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-radius: 5px;
+}
+
+
+/*  Tous le code CSS en bas, représente le footer et la section Contact */
+
+/* Section contact */
+.section_contact {
+    background-color: #f1f5f8;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.contact_info {
+    padding-right: 2rem;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.contact_info p {
+    letter-spacing: 3px;
+    font-family: catamaran, serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.contact_info i {
+    font-size: 20px;
+    color: #678e3e;
+}
+
+.contact_info a {
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #9bae74;
+    font-family: catamaran, serif;
+}
+
+.contact_info a:hover {
+    color: #84b64e;
+}
+
+.email {
+    margin-top: 15px;
+}
+
+.tel {
+    margin-top: 15px;
+}
+
+.contact_form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 450px;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.contact_form h3{
+    color: #6a7f9a;
+    text-align: center;
+    font-family: catamaran, serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    position: relative;
+    top: -25px;
+}
+
+form {
+    height: 340px;
+    width: 400px;
+}
+
+input, textarea {
+    padding: 15px;
+    background-color: #f1f5f8;
+    border-radius: 5px;
+    margin: 10px;
+    border-style: none;
+    color: #c4d2dd;
+}
+
+input {
+    height: 40px;
+    width: 95%;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #c4d2dd;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-family: catamaran, serif;
+}
+
+ textarea {
+    border-radius: 10px;
+    height: 180px;
+    width: 95%;
+    resize: none;
+    vertical-align: top;
+}
+
+.btn-form button {
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #678e3e;
+    color: white;
+    font-size: 15px;
+    font-family: catamaran, serif;
+    letter-spacing: 3px;
+    border: none;
+    cursor: pointer;
+    width: 480px;
+    position: relative;
+    bottom: -5px;
+    left: -40px;
+}
+
+.btn-form button:hover {
+    background-color: #beec8e;
+}
+
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer nav ul li {
+    margin: 0 0.5rem;
+}
+
+footer img {
+    width: 24px; 
+    height: 24px;
+}
+
+footer p {
+    text-align: center;
+    letter-spacing: 3px;
+}
+footer span{
+    color: #678e3e;
+}
+
+.reseaux i {
+    font-size: 22px;
+    color: white;
+}
+
+.reseaux i:hover {
+    color: rgb(206, 202, 202);
+}
+
+
+/* Le code CSS qui se situe ci-dessous concerne le côté responsive du site 
+qui s'ajuste en fonction de la taille de l'écran */
+
+/* Ajustement du positionnement des icônes pour la section OUR SERVICES */
+@media screen and (max-width: 553px){
+
+    .mostar-pestle-projects, .house-chimey-projects, .mug-hot-projects {
+        position: relative;
+        bottom: 215px;
+    }
+}
+
+/* Ecran mobile */
+@media screen and (max-width: 639px) {
+
+    .product_container {
+        padding-top: 100px;
+    }
+
+    .second {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        margin-left: 30px;
+        margin-bottom: 50px;
+    } 
+
+    .img-second {
+        border: 10px solid #577b2f;
+        width: 410px;
+        overflow: hidden;
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+      }
+      
+      .img-second img {
+        width: 410px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s;
+        display: block;
+      }
+    
+
+    .product_gallery {
+        flex-direction: column; /* Les cartes passent en colonne */
+        align-items: center;
+    }
+
+    .product_card {
+        margin-bottom: 20px;
+    }
+
+    .product_card img {
+        width: 100%; /* L'image prend toute la largeur disponible */
+        height: auto; /* Laisse l'image ajuster sa hauteur automatiquement */
+    }
+
+    form {
+        height: 340px;
+        width: 300px;
+    }
+
+    .btn-form button {
+        width: 380px;
+        position: relative;
+        bottom: -5px;
+    }
+
+    .contact_form {
+        margin-left: 30px;
+    }
+}
+
+
+/* Ecran Tablette*/
+@media screen and (min-width: 640px) and (max-width: 1499px) {
+
+    .product_container {
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product_card {
+        margin-bottom: 20px;
+    }
+
+    .second {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        margin-left: 30px;
+        margin-bottom: 50px;
+    }
+
+    .img-second {
+        border: 10px solid #577b2f;
+        width: 550px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      
+      .img-second img {
+        width: 550px;
+        height: 350px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s;
+        display: block;
+      }
+
+}
+
+
