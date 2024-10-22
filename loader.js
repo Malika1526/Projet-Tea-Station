@@ -29,8 +29,7 @@ console.log("Chargement de la page loader");
 
 setTimeout(function() {
 
-    // Force l'enregistrement de l'historique (Pour le navigateur Google Chrome)
-    history.pushState(null, '', window.location.href);
+    history.replaceState(null, '', window.location.href); // Remplace au lieu d'ajouter à l'historique
 
     window.location.href = "./page-accueil/pageaccueil-teastation.html";
 }, 3000); 
@@ -44,7 +43,9 @@ window.onpageshow = function(event) {
 }
 
 // Pour Chrome : gestion du retour en arrière
-window.onpopstate = function(event) {
-    console.log('Retour en arrière détecté');
-    window.location.href = "./page-accueil/pageaccueil-teastation.html"; // Redirige vers la page d'accueil
-};
+
+// Vérifier l'événement de retour en arrière
+window.addEventListener('popstate', function(event) {
+    console.log('Retour en arrière détecté via addEventListener');
+    window.location.href = "./page-accueil/pageaccueil-teastation.html";
+});
