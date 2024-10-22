@@ -27,6 +27,12 @@ gsap.to(".shadow" , {
 
 // Simulation d'un faux temps de chargement de 3 secondes
 setTimeout(function() {
-    
+    //history.replaceState(null, null, './page-accueil/pageaccueil-teastation.html'); 
     window.location.href = "./page-accueil/pageaccueil-teastation.html";
 }, 3000); 
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload() 
+    }
+}
