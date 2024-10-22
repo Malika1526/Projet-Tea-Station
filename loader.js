@@ -25,15 +25,13 @@ gsap.to(".shadow" , {
 }) 
 
 
-// Simulation d'un faux temps de chargement de 3 secondes
- // Vérifier si la redirection a déjà été effectuée
- if (sessionStorage.getItem('redirected')) {
-    window.location.href = 'pageaccueil-teastation.html'; // Rediriger immédiatement
+// Vérifier si le paramètre "redirected" est dans l'URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('redirected')) {
+    window.location.href = './page-accueil/pageaccueil-teastation.html'; // Rediriger immédiatement
 } else {
     // Sinon, exécuter le loader et définir le timeout
     setTimeout(function() {
-        // Marquer la redirection comme effectuée
-        sessionStorage.setItem('redirected', true);
-        window.location.href = 'pageaccueil-teastation.html';
+        window.location.href = './page-accueil/pageaccueil-teastation.html?redirected=true'; // Ajouter un paramètre à l'URL
     }, 3000); // Temps d'attente de 3 secondes
 }
