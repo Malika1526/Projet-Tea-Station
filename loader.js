@@ -26,9 +26,14 @@ gsap.to(".shadow" , {
 
 
 // Simulation d'un faux temps de chargement de 3 secondes
-setTimeout(function() {
-    
-    window.location.href = "./page-accueil/pageaccueil-teastation.html";
-    history.replaceState(null, null, 'pageaccueil-teastation.html'); // Remplacer l'historique pour éviter le retour sur le loader
-
-}, 3000); 
+ // Vérifier si la redirection a déjà été effectuée
+ if (sessionStorage.getItem('redirected')) {
+    window.location.href = 'pageaccueil-teastation.html'; // Rediriger immédiatement
+} else {
+    // Sinon, exécuter le loader et définir le timeout
+    setTimeout(function() {
+        // Marquer la redirection comme effectuée
+        sessionStorage.setItem('redirected', true);
+        window.location.href = 'pageaccueil-teastation.html';
+    }, 3000); // Temps d'attente de 3 secondes
+}
