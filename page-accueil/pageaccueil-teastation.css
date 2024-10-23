@@ -7,7 +7,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html {
@@ -86,15 +85,12 @@ header > * {
     padding-top: 5px;
 }
 
-.icon-linkedin  {
-    color: #1766C2;
-}
-
 .icon-linkedin i:hover {
     color: #1766C2;
     transform: scale(1.4);
     transition: transform 0.3s;
     cursor: pointer;
+    
 }
 
 .title h1 {
@@ -243,8 +239,30 @@ header > * {
     color: #577b2f;
 }
 
+.mobile-nav i {
+    font-size: 20px;
+}
+
 .mobile-nav i:hover {
     transform: scale(1.4);
+    transition: transform 0.3s;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.icon-github i {
+    font-size: 21px; 
+    color: #222222; 
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+.icon-github i:hover {
+    color: #fff;
+    background-color: #222222;
+    border-radius: 50%;
+    transform: scale(1.5);
     transition: transform 0.3s;
     margin-right: 2px;
     cursor: pointer;
@@ -831,6 +849,7 @@ footer span{
     color: #678e3e;
 }
 
+/* Icon Twitter */
 .logo-twitter i {
     font-size: 24px;
     color: #fff; 
@@ -845,6 +864,7 @@ footer span{
     cursor: pointer;
 }
 
+/* Icône Instagram */
 .logo-insta i {
     font-size: 24px;
     color: #fff; 
@@ -859,7 +879,6 @@ footer span{
     transition: transform 0.3s;
     margin-right: 2px;
     cursor: pointer;
-
 }
 
 /* Icône Facebook */
@@ -881,6 +900,7 @@ footer span{
     margin-right: 2px;
     cursor: pointer;
 }
+
 
 
 /* Le code CSS qui se situe ci-dessous concerne le côté responsive du site 
