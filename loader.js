@@ -55,3 +55,5 @@ window.onpopstate = function() {
     // Remet l'état de la page actuelle à chaque tentative de retour en arrière
     window.history.pushState(null, null, window.location.href);
 };
+
+
