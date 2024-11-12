@@ -3,7 +3,8 @@ Ce projet, nommé "Tea Station", a été réalisé dans le cadre de notre format
 Il s'agit d'une reproduction fidèle d'un site web à partir d'une maquette fournie, mettant en pratique nos compétences en HTML, CSS et JavaScript pur.
 
 Ce projet a été réalisé en binôme par :
-Malika BADAOUI
+Malika BADAOUI,
+et
 Adnam KOUD DEMAURISA
 
 Technologies Utilisées :
