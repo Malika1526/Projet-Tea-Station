@@ -5,15 +5,15 @@ Il s'agit d'une reproduction fidèle d'un site web à partir d'une maquette four
 Ce projet a été réalisé en binôme par :
 Malika BADAOUI,
 et
-Adnam KOUD DEMAURISA
+Adnam KOUD DEMAURISA.
 
 Technologies Utilisées :
-HTML5
-CSS3
-JavaScript (vanilla)
+HTML5,
+CSS3,
+JavaScript (vanilla).
 
 Fonctionnalités :
-Design responsive adapté à différents appareils
-Navigation fluide entre les différentes sections du site
-Galerie d'images interactive
-Animations et transitions pour une expérience utilisateur améliorée
+Design responsive adapté à différents appareils,
+Navigation fluide entre les différentes sections du site,
+Galerie d'images interactive,
+Animations et transitions pour une expérience utilisateur améliorée.
